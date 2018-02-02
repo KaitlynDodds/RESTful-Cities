@@ -34,6 +34,15 @@ router.post('/cities', (req, res) => {
 });
 
 // SHOW - GET
+router.get('/cities/:id', (req, res) => {
+  City.findById(req.params.id, function(err, city) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('views/show', {city: city});
+    }
+  });
+});
 
 // EDIT - GET
 
