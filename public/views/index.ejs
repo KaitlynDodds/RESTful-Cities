@@ -1,12 +1,15 @@
 <% include partials/header %>
-
-<% cities.forEach(function(city) { %>
-  <h3><%= city.name %></h3>
-  <span><%= city.state %></span>
-  <img src="<%= city.image %>">
-  <p><%= city.population %></p>
-  <p><%= city.date_created %></p>
-  <a href="/cities/<%= city._id %>">Read More...</a>
-<% }) %>
-
+<div class="w-75 p-3 mx-auto">
+  <% cities.forEach(function(city) { %>
+    <div class="card">
+      <img class="w-25 p-3 img-thumbnail" src="<%= city.image %>">
+      <div class="card-img-overlay">
+        <h4 class="card-title"><%= city.name %>, <%= city.state %></h4>
+        <h6 class="card-subtitle mb-2 text-muted">Population: <%= city.population %></h6>
+        <h6 class="card-subtitle mb-2 text-muted"><%= city.date_created.toDateString() %></h6>
+        <a href="/cities/<%= city._id %>" class="card-link">Read More...</a>
+      </div>
+    </div>
+  <% }) %>
+</div>
 <% include partials/footer %>
