@@ -3,7 +3,23 @@ const express = require('express'),
 
 // INDEX
 router.get('/', function(req, res) {
-  res.send('Hello, world!');
+  res.redirect('/cities');
 });
+
+router.get('/cities', (req, res) => {
+  res.render('views/index');
+});
+
+// NEW - GET
+
+// CREATE - POST
+
+// SHOW - GET
+
+// EDIT - GET
+
+// UPDATE - PUT
+
+// DELETE - DELETE
 
 module.exports = router;
