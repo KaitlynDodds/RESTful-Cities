@@ -38,6 +38,7 @@ router.get('/cities/:id', (req, res) => {
   City.findById(req.params.id, function(err, city) {
     if (err) {
       console.log(err);
+      res.redirect('/cities');
     } else {
       res.render('views/show', {city: city});
     }
@@ -45,8 +46,30 @@ router.get('/cities/:id', (req, res) => {
 });
 
 // EDIT - GET
+router.get('/cities/:id/edit', (req, res) => {
+  City.findById(req.params.id, function(err, city) {
+    if (err) {
+      console.log(err);
+      res.redirect('/cities');
+    } else {
+      console.log(city);
+      res.render('views/edit', {city: city});
+    }
+  });
+});
 
 // UPDATE - PUT
+router.put('/cities/:id', (req, res) => {
+  City.findByIdAndUpdate(req.params.id, req.body.city, function(err, city) {
+    if (err) {
+      console.log(err);
+      res.redirect('/cities');
+    } else {
+      console.log(city);
+      res.redirect('/cities/' + city._id);
+    }
+  });
+});
 
 // DELETE - DELETE
 
