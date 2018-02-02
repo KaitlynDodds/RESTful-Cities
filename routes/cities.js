@@ -72,5 +72,16 @@ router.put('/cities/:id', (req, res) => {
 });
 
 // DELETE - DELETE
+router.delete('/cities/:id', (req, res) => {
+  City.findByIdAndRemove(req.params.id, function(err, city) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('DELETED');
+      console.log(city);
+    }
+    res.redirect('/cities');
+  })
+});
 
 module.exports = router;
