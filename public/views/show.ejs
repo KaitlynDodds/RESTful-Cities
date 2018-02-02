@@ -1,3 +1,5 @@
+<% include partials/header %>
+
 <h3><%= city.name %>, <%= city.state %></h3>
 <span><%= city.population %></span>
 <span><%= city.date_created %></span>
@@ -8,3 +10,5 @@
   <button type="submit">Delete City</button>
 </form>
 <a href="/cities/<%= city._id %>/edit">Edit City</a>
+
+<% include partials/footer %>

@@ -1,6 +1,4 @@
-<h1>Hello from Index</h1>
-
-<a href="/cities/new" >New City</a>
+<% include partials/header %>
 
 <% cities.forEach(function(city) { %>
   <h3><%= city.name %></h3>
@@ -10,3 +8,5 @@
   <p><%= city.date_created %></p>
   <a href="/cities/<%= city._id %>">Read More...</a>
 <% }) %>
+
+<% include partials/footer %>
