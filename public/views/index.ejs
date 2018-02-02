@@ -1,1 +1,9 @@
 <h1>Hello from Index</h1>
+
+<% cities.forEach(function(city) { %>
+  <h3><%= city.name %></h3>
+  <span><%= city.state %></span>
+  <img src="<%= city.image %>">
+  <p><%= city.population %></p>
+  <p><%= city.date_created %></p>
+<% }) %>

@@ -1,5 +1,6 @@
 const express = require('express'),
-      router = express.Router();
+      router = express.Router(),
+      City = require('../models/cityModel');
 
 // INDEX
 router.get('/', function(req, res) {
@@ -7,7 +8,12 @@ router.get('/', function(req, res) {
 });
 
 router.get('/cities', (req, res) => {
-  res.render('views/index');
+  City.find({}, function(err, cities) {
+    if (err) {
+      console.log(err);
+    }
+    res.render('views/index', {cities: cities});
+  });
 });
 
 // NEW - GET
