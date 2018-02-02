@@ -17,8 +17,21 @@ router.get('/cities', (req, res) => {
 });
 
 // NEW - GET
+router.get('/cities/new', (req, res) => {
+  res.render('views/new');
+});
 
 // CREATE - POST
+router.post('/cities', (req, res) => {
+  City.create(req.body.city, function(err, city) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(city);
+      res.redirect('/cities');
+    }
+  });
+});
 
 // SHOW - GET
 
