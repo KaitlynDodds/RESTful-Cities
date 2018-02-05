@@ -13,3 +13,8 @@
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
+
+form {
+	width: 60%;
+	margin: 0 auto;
+}
