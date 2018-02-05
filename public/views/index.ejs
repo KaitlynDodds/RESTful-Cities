@@ -15,7 +15,7 @@
       <div class="col-7 align-self-center">
         <p class="text-muted"><small><%= city.date_created.toDateString() %></small></p>
         <h1 class=""><%= city.name %>, <%= city.state %></h1>      
-        <h6 class="text-muted">Population: <%= city.population %></h6>
+        <h6 class="text-muted">Population: <%= city.population.toLocaleString('en') %></h6>
 
       </div>
 
