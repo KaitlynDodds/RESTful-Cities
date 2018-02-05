@@ -1,4 +1,15 @@
 .container {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.city-display {
+	margin: 20px 0;
+	padding: 20px 10px;
+	border-bottom: 10px solid #d6d8db;
+	border-top: 2px solid #d6d8db;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
